@@ -32,3 +32,10 @@ void drawCircle(int cx,int cy,int r)
 {
     for(int y=0;y<ROWS;y++)
     {
+        for(int x=0;x<COLS;x++)
+        {
+            if(isCirclePoint(x,y,cx,cy,r))
+                buffer[y][x]='*';
+        }
+    }
+}
