@@ -130,3 +130,36 @@ void drawLine(int x1,int y1,int x2,int y2)
         }
     }
 }
+void deleteArea(int x,int y,int width,int height)
+{
+    for(int i=y;i<y+height;i++)
+    {
+        for(int j=x;j<x+width;j++)
+        {
+            if(i>=0 && i<ROWS &&
+               j>=0 && j<COLS)
+                buffer[i][j]=' ';
+        }
+    }
+}
+
+int main()
+{
+    int choice;
+
+    initializeBuffer();
+
+    do
+    {
+        printf("\n===== SHAPE DRAWER =====\n");
+        printf("1. Draw Circle\n");
+        printf("2. Draw Rectangle\n");
+        printf("3. Draw Triangle\n");
+        printf("4. Draw Line\n");
+        printf("5. Delete Area\n");
+        printf("6. Display Picture\n");
+        
+        printf("0. Exit\n");
+
+        printf("Enter Choice: ");
+        scanf("%d",&choice);
