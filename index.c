@@ -39,3 +39,18 @@ void drawCircle(int cx,int cy,int r)
         }
     }
 }
+void drawRectangle(int x,int y,int width,int height)
+{
+    int i;
+
+    for(i=x;i<=x+width;i++)
+    {
+        if(i>=0 && i<COLS)
+        {
+            if(y>=0 && y<ROWS)
+                buffer[y][i]='*';
+
+            if(y+height>=0 && y+height<ROWS)
+                buffer[y+height][i]='*';
+        }
+    }
