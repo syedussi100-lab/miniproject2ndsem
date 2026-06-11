@@ -54,3 +54,15 @@ void drawRectangle(int x,int y,int width,int height)
                 buffer[y+height][i]='*';
         }
     }
+    for(i=y;i<=y+height;i++)
+    {
+        if(i>=0 && i<ROWS)
+        {
+            if(x>=0 && x<COLS)
+                buffer[i][x]='*';
+
+            if(x+width>=0 && x+width<COLS)
+                buffer[i][x+width]='*';
+        }
+    }
+}
