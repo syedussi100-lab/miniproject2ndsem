@@ -66,3 +66,67 @@ void drawRectangle(int x,int y,int width,int height)
         }
     }
 }
+void drawTriangle(int x,int y,int h)
+{
+    for(int row=0;row<=h;row++)
+    {
+        int left=x-row;
+        int right=x+row;
+
+        if(y+row<ROWS)
+        {
+            if(left>=0 && left<COLS)
+                buffer[y+row][left]='*';
+
+            if(right>=0 && right<COLS)
+                buffer[y+row][right]='*';
+        }
+    }
+
+    int left=x-h;
+    int right=x+h;
+
+    if(y+h>=0 && y+h<ROWS)
+    {
+        for(int i=left;i<=right;i++)
+        {
+            if(i>=0 && i<COLS)
+                buffer[y+h][i]='*';
+        }
+    }
+}
+
+void drawLine(int x1,int y1,int x2,int y2)
+{
+    int dx=abs(x2-x1);
+    int dy=abs(y2-y1);
+
+    int sx=(x1<x2)?1:-1;
+    int sy=(y1<y2)?1:-1;
+
+    int err=dx-dy;
+
+    while(1)
+    {
+        if(x1>=0 && x1<COLS &&
+           y1>=0 && y1<ROWS)
+            buffer[y1][x1]='*';
+
+        if(x1==x2 && y1==y2)
+            break;
+
+        int e2=2*err;
+
+        if(e2>-dy)
+        {
+            err-=dy;
+            x1+=sx;
+        }
+
+        if(e2<dx)
+        {
+            err+=dx;
+            y1+=sy;
+        }
+    }
+}
