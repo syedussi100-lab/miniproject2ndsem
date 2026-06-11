@@ -1,0 +1,6 @@
+Create a 2D character array of fixed size to act as a drawing canvas. Initialize every position with a blank space.
+Correct the logical errors..
+Implement a circle drawing function. For every point in the canvas,
+check whether its distance from the center is approximately equal to the radius. If true, mark that point with '*'.
+Implement a line drawing function that works for horizontal, vertical and diagonal lines.
+Use an incremental algorithm to plot points between the start and end coordinates.
