@@ -163,3 +163,77 @@ int main()
 
         printf("Enter Choice: ");
         scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+            {
+                int cx,cy,r;
+
+                printf("Center X Center Y Radius: ");
+                scanf("%d%d%d",&cx,&cy,&r);
+
+                drawCircle(cx,cy,r);
+                break;
+            }
+
+            case 2:
+            {
+                int x,y,w,h;
+
+                printf("X Y Width Height: ");
+                scanf("%d%d%d%d",&x,&y,&w,&h);
+
+                drawRectangle(x,y,w,h);
+                break;
+            }
+
+            case 3:
+            {
+                int x,y,h;
+
+                printf("ApexX ApexY Height: ");
+                scanf("%d%d%d",&x,&y,&h);
+
+                drawTriangle(x,y,h);
+                break;
+            }
+
+            case 4:
+            {
+                int x1,y1,x2,y2;
+
+                printf("X1 Y1 X2 Y2: ");
+                scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+
+                drawLine(x1,y1,x2,y2);
+                break;
+            }
+
+            case 5:
+            {
+                int x,y,w,h;
+
+                printf("X Y Width Height: ");
+                scanf("%d%d%d%d",&x,&y,&w,&h);
+
+                deleteArea(x,y,w,h);
+                break;
+            }
+
+            case 6:
+                displayBuffer();
+                break;
+
+            case 0:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid Choice\n");
+        }
+
+    }while(choice!=0);
+
+    return 0;
+}
