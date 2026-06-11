@@ -25,7 +25,7 @@ void displayBuffer()
 }
 int isCirclePoint(int x,int y,int cx,int cy,int r)
 {
-    int value=(x-cx)(x-cx)+(y-cy)(y-cy);
+    int value=(x-cx)*(x-cx)+(y-cy)*(y-cy);
     return abs(value-r*r)<=r;
 }
 void drawCircle(int cx,int cy,int r)
